@@ -1,0 +1,88 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/accordion-block",
+	"version": "0.1.0",
+	"title": "Accordion Block",
+	"category": "design",
+	"icon": "smiley",
+	"description": "Accordion content create block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+		  "type": "string",
+		  "default": "タイトル"
+		},
+		"content": {
+		  "type": "string",
+		  "default": "コンテンツ"
+		},
+		"uniformRadius": {
+		  "type": "boolean",
+		  "default": true
+		},
+		"uniformPadding": {
+		  "type": "boolean",
+		  "default": true
+		},
+		"topLeftRadius": {
+		  "type": "number",
+		  "default": 0
+		},
+		"topRightRadius": {
+		  "type": "number",
+		  "default": 0
+		},
+		"bottomLeftRadius": {
+		  "type": "number",
+		  "default": 0
+		},
+		"bottomRightRadius": {
+		  "type": "number",
+		  "default": 0
+		},
+		"borderColors": {
+		  "type": "string",
+		  "default": "#000"
+		},
+		"borderWidth": {
+		  "type": "number",
+		  "default": 1
+		},
+		"borderStyle": {
+		  "type": "string",
+		  "default": "solid"
+		},
+		"topPadding": {
+		  "type": "number",
+		  "default": 5
+		},
+		"rightPadding": {
+		  "type": "number",
+		  "default": 5
+		},
+		"bottomPadding": {
+		  "type": "number",
+		  "default": 5
+		},
+		"leftPadding": {
+		  "type": "number",
+		  "default": 5
+		},
+		"ttlColors": {
+		  "type": "string",
+		  "default": "#fff"
+		},
+		"contentColors": {
+		  "type": "string",
+		  "default": "#fff"
+		}
+	},
+	"textdomain": "accordion-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./preview.js",
+	"style": "file:./style-index.css"
+}

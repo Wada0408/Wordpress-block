@@ -1,0 +1,39 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-create-block-accordion-block {
+// 	background-color: #21759b;
+// 	color: #fff;
+// 	padding: 2px;
+// }
+.accordion{
+	max-width: 840px;
+	margin: auto;
+	overflow: hidden;
+	width: 90%;
+	margin: 0 auto;
+	&-header{
+		cursor: pointer;
+		position: relative;
+		&.js-active{
+			// & ~ .accordion-content{
+			// 	height: auto;
+			// }
+		}
+	}
+	& p{
+		margin: 0;
+	}
+	&-icon{
+		position: absolute;
+	}
+	&-content{
+		display: none;
+		// height: 0;
+		overflow: hidden;
+	}
+}
