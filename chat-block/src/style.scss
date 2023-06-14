@@ -1,0 +1,160 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+ $sp-size: 640;
+ $pc-size: 1000;
+
+ $sp-max-width: 640px;
+ $tab-min-width: 641px;
+ $tab-max-width: 1000px;
+ $pc-min-width: 1001px;
+ $pc-max-width: 1600px;
+ $max-wrap: 1601px;
+ @mixin mq-sp($max: $sp-max-width){
+	@media screen and (max-width: #{$max}) {
+	@content;
+	}
+}
+@mixin mq-tab($min: $tab-min-width,$max: $tab-max-width){
+	@media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+	@content;
+	}
+}
+//tab-keiasan
+@function t-keisan ($px ,$pc-min-width : $pc-size) {
+	@return ($px/$pc-min-width)*100  + vw;
+}
+//sp-keiasan
+@function s-keisan ($px ,$sp-min-width : $sp-size) {
+	@return ($px/$sp-min-width)*100  + vw;
+}
+ .wp-block-wdl-le-comment-block {
+	// border: 1px solid #000;
+}
+.comment{
+	&Container{
+		display: flex;
+		&--left{
+
+		}
+		&--right{
+			flex-direction: row-reverse;
+		}
+	}
+	&Users{
+		flex: 0 1 20%;
+	}
+	&User{
+		&__img{
+			width: 70px;
+			height: 70px;
+			margin: 0 auto;
+			overflow: hidden;
+			border-radius: 50%;
+			@include mq-tab{
+				width: t-keisan(70);
+				height: t-keisan(70);
+			}
+			@include mq-sp{
+				width: s-keisan(70);
+				height: s-keisan(70);
+			}
+			& img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&__name{
+			margin: 0;
+			text-align: center;
+			letter-spacing: 0;
+			font-size: 16px;
+			line-height: 1.64706;
+			@include mq-tab{
+				font-size: t-keisan(16);
+			}
+			@include mq-sp{
+				font-size: s-keisan(21);
+			}
+		}
+	}
+	&__txt{
+		position: relative;
+		padding: 3% 3.6%;
+		letter-spacing: 0;
+		font-size: 1.25rem;
+		line-height: 2.05;
+		background: #FFF8DB;
+		border-radius: 5px;
+		// width: 100%;
+		margin: 0;
+		@include mq-tab{
+			font-size: t-keisan(20);
+			border-radius: t-keisan(5);
+		}
+		@include mq-sp{
+			font-size: s-keisan(24);
+			border-radius: s-keisan(5);
+		}
+	}
+	&__block{
+		position: relative;
+		flex: 0 1 60%;
+		&--arrow{
+			position: absolute;
+			width: 50px;
+			height: 20px;
+			top: min(20%, 50px);
+			border-top:15px solid transparent;
+			border-bottom: 15px solid transparent;
+			box-sizing: border-box;
+			left: -50px;
+			border-left: 15px solid transparent;
+			border-right-style: solid ;
+			border-right-width: 15px ;
+			border-right-color: #FFF8DB;
+			@include mq-tab{
+				width: t-keisan(50);
+				height: t-keisan(20);
+				top: min(20%, t-keisan(50));
+				border-top: t-keisan(15) solid transparent;
+				border-bottom: t-keisan(15) solid transparent;
+				left: t-keisan(-50);
+				border-left: t-keisan(15) solid transparent;
+				border-right-width: t-keisan(15) ;
+			}
+			@include mq-sp{
+				width: s-keisan(50);
+				height: s-keisan(20);
+				top: min(20%, s-keisan(50));
+				border-top: s-keisan(15) solid transparent;
+				border-bottom: s-keisan(15) solid transparent;
+				left: s-keisan(-50);
+				border-left: s-keisan(15) solid transparent;
+				border-right-width: s-keisan(15) ;
+			}
+			.commentContainer--right &{
+				left: unset;
+				border-right: unset;
+				right: -50px;
+				border-left: 15px solid transparent;
+				border-left-style: solid ;
+				border-left-width: 15px ;
+				border-left-color: #FFF8DB;
+				@include mq-tab{
+					right: t-keisan(-50);
+					border-left: t-keisan(15) solid transparent;
+					border-left-width: t-keisan(15) ;
+				}
+				@include mq-sp{
+					right: s-keisan(-50);
+					border-left: s-keisan(15) solid transparent;
+					border-left-width: s-keisan(15) ;
+				}
+			}
+		}
+	}
+}

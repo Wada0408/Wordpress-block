@@ -1,0 +1,88 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-wdl-le-comment-block {
+	// border: 1px solid #000;
+}
+.components-button.block{
+	margin: 0 2% 0 0;
+}
+fieldset{
+	padding: 2% 0;
+}
+// .comment{
+// 	&Container{
+// 		display: flex;
+// 		&--left{
+
+// 		}
+// 		&--right{
+// 			flex-direction: row-reverse;
+// 		}
+// 	}
+// 	&Users{
+// 		flex: 0 1 20%;
+// 	}
+// 	&User{
+// 		&__img{
+// 			width: 70px;
+// 			height: 70px;
+// 			margin: 0 auto;
+// 			overflow: hidden;
+// 			border-radius: 50%;
+// 			& img{
+// 				width: 100%;
+// 				height: 100%;
+// 				object-fit: cover;
+// 			}
+// 		}
+// 		&__name{
+// 			margin: 0;
+// 			text-align: center;
+// 			letter-spacing: 0.015rem;
+// 			font-size: 1.0625rem;
+// 			line-height: 1.64706;
+// 		}
+// 	}
+// 	&__txt{
+// 		position: relative;
+// 		padding: 3% 3.6%;
+// 		letter-spacing: 0.015rem;
+// 		font-size: 1.25rem;
+// 		line-height: 2.05;
+// 		background: #FFF8DB;
+// 		border-radius: 5px;
+// 		width: 100%;
+// 		margin: 0;
+// 	}
+// 	&__block{
+// 		position: relative;
+// 		flex: 0 1 80%;
+// 		&--arrow{
+// 			position: absolute;
+// 			width: 50px;
+// 			height: 20px;
+// 			top: min(20%, 50px);
+// 			border-top:15px solid transparent;
+// 			border-bottom: 15px solid transparent;
+// 			box-sizing: border-box;
+// 			left: -50px;
+// 			border-left: 15px solid transparent;
+// 			border-right-style: solid ;
+// 			border-right-width: 15px ;
+// 			border-right-color: #FFF8DB;
+// 			.commentContainer--right &{
+// 				left: unset;
+// 				border-right: unset;
+// 				right: -50px;
+// 				border-left: 15px solid transparent;
+// 				border-left-style: solid ;
+// 				border-left-width: 15px ;
+// 				border-left-color: #FFF8DB;
+// 			}
+// 		}
+// 	}
+// }

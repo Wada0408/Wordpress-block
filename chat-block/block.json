@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "wdl/chat-block",
+	"version": "1.0",
+	"title": "チャット風ブロック",
+	"category": "design",
+	"icon": "list-view",
+	"description": "チャット風ブロック",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "chat-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
