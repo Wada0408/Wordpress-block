@@ -9,12 +9,15 @@
             tagName: 'u',
             className: 'has-underline',
             edit: function(props) {
-                var isActive = props.isActive;
-                var value = props.value;
-                var onChange = props.onChange; // 初期のアクティブな色
-                var activeColor = props.value.activeFormats[0]?.unregisteredAttributes?.color; // 初期のアクティブな色
-                // console.log();
-                // console.log(props);
+                var isActive = props?.isActive;
+                var value = props?.value;
+                var onChange = props?.onChange; // 初期のアクティブな色
+                if (!props.value.activeFormats) {
+                    props.value.activeFormats = [];
+                }
+                var activeColor = props?.value.activeFormats[0]?.unregisteredAttributes?.color; // 初期のアクティブな色
+                console.log(props?.value.activeFormats[0]);
+                // console.log(activeColor);
                 function onToggle() {
                     if(!activeColor){
                         activeColor = "#000000"
@@ -24,6 +27,9 @@
                         attributes: { 
                             style: 'text-decoration-color: ' + activeColor + '',
                             color: activeColor
+                        },
+                        unregisteredAttributes:{
+                            color:activeColor
                         }
                     }));
                 }
@@ -37,15 +43,26 @@
                             style: 'text-decoration-color: ' + activeColor + '',
                             color: activeColor
                         },
+                        unregisteredAttributes:{
+                            color:activeColor
+                        },
                         value: value
                     }));
                 }
+                var isRootContainer = document.querySelector('.is-root-container');
+                // var formatBoundaryTag = document.querySelector('[data-rich-text-format-boundary="true"]');
+                // .is-selectedクラスを持つ要素を取得
+                const parentElement = document.querySelector('.is-selected');
 
+                // 子要素の中から[data-rich-text-format-boundary="true"]属性を持つ要素を取得
+                const formatBoundaryTag = parentElement?.querySelector('[data-rich-text-format-boundary="true"]');
+
+                // console.log(formatBoundaryTag);
                 // カラーピッカーのスタイルと位置調整用のスタイル
                 var colorPickerStyle = {
                     position: 'absolute',
                     zIndex: 9999,
-                    top: '40%',
+                    top: formatBoundaryTag ? formatBoundaryTag.getBoundingClientRect().top - isRootContainer.getBoundingClientRect().top + formatBoundaryTag.offsetHeight + 'px' : '40%',
                     left: '0',
                     right: '0',
                     margin: "0 auto",
