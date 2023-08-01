@@ -6,7 +6,7 @@
     registerFormatType(
         'underline/inline', {
             title: __('Underline', 'text-domain'),
-            tagName: 'u',
+            tagName: 'span',
             className: 'has-underline',
             edit: function(props) {
                 var isActive = props?.isActive;
@@ -16,7 +16,7 @@
                     props.value.activeFormats = [];
                 }
                 var activeColor = props?.value.activeFormats[0]?.unregisteredAttributes?.color; // 初期のアクティブな色
-                console.log(props?.value.activeFormats[0]);
+                // console.log(props?.value.activeFormats[0]);
                 // console.log(activeColor);
                 function onToggle() {
                     if(!activeColor){
@@ -25,7 +25,7 @@
                     onChange(toggleFormat(value, {
                         type: 'underline/inline',
                         attributes: { 
-                            style: 'text-decoration-color: ' + activeColor + '',
+                            style: 'border-bottom: solid 2px ' + activeColor + '',
                             color: activeColor
                         },
                         unregisteredAttributes:{
@@ -40,7 +40,7 @@
                     onChange(wp.richText.applyFormat(value, {
                         type: 'underline/inline',
                         attributes: { 
-                            style: 'text-decoration-color: ' + activeColor + '',
+                            style: 'border-bottom: solid 2px ' + activeColor + '',
                             color: activeColor
                         },
                         unregisteredAttributes:{
@@ -78,7 +78,7 @@
                     null,
                     wp.element.createElement(
                         wp.blockEditor.RichTextToolbarButton, {
-                            icon: 'editor-underline',
+                            icon: wp.element.createElement('svg', {xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:"48", height:"48", ariaHidden:"true" ,focusable:"false", dangerouslySetInnerHTML: { __html: '<path d="M7 18v1h10v-1H7zm5-2c1.5 0 2.6-.4 3.4-1.2.8-.8 1.1-2 1.1-3.5V5H15v5.8c0 1.2-.2 2.1-.6 2.8-.4.7-1.2 1-2.4 1s-2-.3-2.4-1c-.4-.7-.6-1.6-.6-2.8V5H7.5v6.2c0 1.5.4 2.7 1.1 3.5.8.9 1.9 1.3 3.4 1.3z"></path>' } }),
                             title: __('下線', 'text-domain'),
                             onClick: onToggle,
                             isActive: isActive,
